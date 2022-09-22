@@ -13,9 +13,9 @@ TEST(TestIjk, TestConstructor) {
     EXPECT_EQ(a.k, 0);
 
     // given value
-    for (int i = 0; i < 30; ++i) {
-    for (int j = 0; j < 30; ++j) {
-    for (int k = 0; k < 30; ++k) {
+    for (std::size_t i = 0; i < 30; ++i) {
+    for (std::size_t j = 0; j < 30; ++j) {
+    for (std::size_t k = 0; k < 30; ++k) {
         ijk a(i,j,k);
         EXPECT_EQ(a.i, i);
         EXPECT_EQ(a.j, j);
@@ -24,9 +24,9 @@ TEST(TestIjk, TestConstructor) {
 }
 
 TEST(TestIjk, TestOperatorPos) {
-    for (int i = 0; i <= 30; ++i) {
-    for (int j = 0; j <= 30; ++j) {
-    for (int k = 0; k <= 30; ++k) {
+    for (std::size_t i = 0; i <= 30; ++i) {
+    for (std::size_t j = 0; j <= 30; ++j) {
+    for (std::size_t k = 0; k <= 30; ++k) {
         ijk a(i, j, k);
         EXPECT_EQ(a[0], i);
         EXPECT_EQ(a[1], j);
@@ -43,12 +43,12 @@ TEST(TestIjk, TestOperatorPos) {
 }
 
 TEST(TestIjk, TestIndex) {
-    for (int n = 0; n <= 30; ++n) {
+    for (std::size_t n = 0; n <= 30; ++n) {
         std::vector<ijk> ijkVec = generate_ijk(n);
 
         // test number of ijk generate
-        int ijkGenNum = static_cast<int>(ijkVec.size());
-        int ijkCalNum = (n+1)*(n+2)/2;
+        std::size_t ijkGenNum = ijkVec.size();
+        std::size_t ijkCalNum = (n+1)*(n+2)/2;
         EXPECT_EQ(ijkGenNum, ijkCalNum);
 
         // test ijk::index()
@@ -58,10 +58,33 @@ TEST(TestIjk, TestIndex) {
     }
 }
 
+TEST(TestIjk, TestSum) {
+    for (std::size_t i = 0; i <= 30; ++i) {
+    for (std::size_t j = 0; j <= 30; ++j) {
+    for (std::size_t k = 0; k <= 30; ++k) {
+        ijk a(i, j, k);
+        EXPECT_EQ(a.sum(), i + j + k);
+    }}}
+}
+
+TEST(TestIjk, TestIsZero) {
+    for (std::size_t i = 0; i <= 30; ++i) {
+    for (std::size_t j = 0; j <= 30; ++j) {
+    for (std::size_t k = 0; k <= 30; ++k) {
+        ijk a(i, j, k);
+        if (i == 0 && j == 0 && k == 0) {
+            EXPECT_TRUE(a.is_zero());
+        }
+        else {
+            EXPECT_FALSE(a.is_zero());
+        }
+    }}}
+}
+
 TEST(TestIjk, TestOperatorCmp) {
-    for (int n = 0; n <= 30; ++n) {
+    for (std::size_t n = 0; n <= 30; ++n) {
         std::vector<ijk> ijkVec = generate_ijk(n);
-        std::vector<std::vector<int>> vecVec;
+        std::vector<std::vector<std::size_t>> vecVec;
         for (const ijk &a : ijkVec) {
             vecVec.push_back({a.i, a.j, a.k});
         }

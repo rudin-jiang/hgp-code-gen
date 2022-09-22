@@ -10,15 +10,22 @@
 
 class ijk {
 public:
-    int i, j, k;
+    std::size_t i, j, k;
 
-    explicit ijk(int i = 0, int j = 0, int  k = 0)
+    explicit ijk(std::size_t i = 0,
+                 std::size_t j = 0,
+                 std::size_t k = 0)
     : i(i), j(j), k(k) {}
 
-    int  operator[](std::size_t pos) const;
-    int& operator[](std::size_t pos);
+    std::size_t  operator[](std::size_t pos) const;
+    std::size_t& operator[](std::size_t pos);
 
     std::size_t index() const;  // see index_of_ijk
+    std::size_t sum() const { return i + j + k; }
+
+    bool is_zero() const { return !i && !j && !k; }
+
+    std::string to_comment() const;
 };
 
 std::istream& operator>>(std::istream &is, ijk &a);
@@ -39,8 +46,12 @@ bool operator!=(const ijk &a, const ijk &b);
 // be in the position index_of_ijk(i,j,k).
 // For more about lexicographic order, see 
 // https://en.wikipedia.org/wiki/Lexicographic_order
-std::size_t index_of_ijk(int i, int j, int k);
+std::size_t index_of_ijk(
+    std::size_t i, std::size_t j, std::size_t k
+);
 
 // generate all (i,j,k) that i+j+k==n
 // return in lexicographic order
-std::vector<ijk> generate_ijk(int n);
+std::vector<ijk> generate_ijk(std::size_t n);
+
+
