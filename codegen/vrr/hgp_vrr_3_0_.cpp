@@ -56,12 +56,10 @@ void hgp_vrr_3_0_(
     a2b0[ 0] = PAz * a1b0[ 0] + WPz * a1b0[ 3] + 0.5 * 1 * invZetaAB * (a0b0[ 0] - zetaCD * invZeta * a0b0[ 1]);
     a2b0[ 2] = PAy * a1b0[ 1] + WPy * a1b0[ 4] + 0.5 * 1 * invZetaAB * (a0b0[ 0] - zetaCD * invZeta * a0b0[ 1]);
     a2b0[ 4] = PAx * a1b0[ 1] + WPx * a1b0[ 4];
-    a2b0[ 4] = PAy * a1b0[ 2] + WPy * a1b0[ 5];
     a2b0[ 5] = PAx * a1b0[ 2] + WPx * a1b0[ 5] + 0.5 * 1 * invZetaAB * (a0b0[ 0] - zetaCD * invZeta * a0b0[ 1]);
     a2b0[ 6] = PAz * a1b0[ 3] + WPz * a1b0[ 6] + 0.5 * 1 * invZetaAB * (a0b0[ 1] - zetaCD * invZeta * a0b0[ 2]);
     a2b0[ 8] = PAy * a1b0[ 4] + WPy * a1b0[ 7] + 0.5 * 1 * invZetaAB * (a0b0[ 1] - zetaCD * invZeta * a0b0[ 2]);
     a2b0[10] = PAx * a1b0[ 4] + WPx * a1b0[ 7];
-    a2b0[10] = PAy * a1b0[ 5] + WPy * a1b0[ 8];
     a2b0[11] = PAx * a1b0[ 5] + WPx * a1b0[ 8] + 0.5 * 1 * invZetaAB * (a0b0[ 1] - zetaCD * invZeta * a0b0[ 2]);
     a3b0[ 0] = PAz * a2b0[ 0] + WPz * a2b0[ 6] + 0.5 * 2 * invZetaAB * (a1b0[ 0] - zetaCD * invZeta * a1b0[ 3]);
     a3b0[ 1] = PAy * a2b0[ 0] + WPy * a2b0[ 6];
@@ -70,10 +68,8 @@ void hgp_vrr_3_0_(
     a3b0[ 4] = PAx * a2b0[ 0] + WPx * a2b0[ 6];
     a3b0[ 5] = PAz * a2b0[ 4] + WPz * a2b0[10];
     a3b0[ 6] = PAx * a2b0[ 2] + WPx * a2b0[ 8];
-    a3b0[ 6] = PAy * a2b0[ 4] + WPy * a2b0[10] + 0.5 * 1 * invZetaAB * (a1b0[ 2] - zetaCD * invZeta * a1b0[ 5]);
     a3b0[ 7] = PAz * a2b0[ 5] + WPz * a2b0[11];
     a3b0[ 8] = PAx * a2b0[ 4] + WPx * a2b0[10] + 0.5 * 1 * invZetaAB * (a1b0[ 1] - zetaCD * invZeta * a1b0[ 4]);
-    a3b0[ 8] = PAy * a2b0[ 5] + WPy * a2b0[11];
     a3b0[ 9] = PAx * a2b0[ 5] + WPx * a2b0[11] + 0.5 * 2 * invZetaAB * (a1b0[ 2] - zetaCD * invZeta * a1b0[ 5]);
 } // function (hgp_vrr_3_0_)
 

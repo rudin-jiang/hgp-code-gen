@@ -259,24 +259,20 @@ int main() {
             }
 
             if (p[cPos] > 0) {
-                ofs << " + 0.5 * " << p[cPos] << " * "
+                ofs << " + 0.5 * " << p[cPos] << " * invZeta * "
                     << p.hgp_vrr_need_e(i).array_elem(widthMaxArraySize);
             }
 
             ofs << ";" << std::endl;
 
             hasCalcEle.insert(p);
+
+            break;
         }
 
         // check calculated
         assert(hasCalcEle.find(p) != hasCalcEle.end());
     }
-
-
-
-
-
-
 
     
 

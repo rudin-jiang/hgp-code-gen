@@ -48,15 +48,15 @@ void hgp_vrr_1_1_(
     a1b0[3] = PAz * a0b0[1] + WPz * a0b0[2];
     a1b0[4] = PAy * a0b0[1] + WPy * a0b0[2];
     a1b0[5] = PAx * a0b0[1] + WPx * a0b0[2];
-    a1b1[0] = QCz * a1b0[0] + WQz * a1b0[3] + 0.5 * 1 * a0b0[1];
+    a1b1[0] = QCz * a1b0[0] + WQz * a1b0[3] + 0.5 * 1 * invZeta * a0b0[1];
     a1b1[1] = QCy * a1b0[0] + WQy * a1b0[3];
     a1b1[2] = QCx * a1b0[0] + WQx * a1b0[3];
     a1b1[3] = QCz * a1b0[1] + WQz * a1b0[4];
-    a1b1[4] = QCy * a1b0[1] + WQy * a1b0[4] + 0.5 * 1 * a0b0[1];
+    a1b1[4] = QCy * a1b0[1] + WQy * a1b0[4] + 0.5 * 1 * invZeta * a0b0[1];
     a1b1[5] = QCx * a1b0[1] + WQx * a1b0[4];
     a1b1[6] = QCz * a1b0[2] + WQz * a1b0[5];
     a1b1[7] = QCy * a1b0[2] + WQy * a1b0[5];
-    a1b1[8] = QCx * a1b0[2] + WQx * a1b0[5] + 0.5 * 1 * a0b0[1];
+    a1b1[8] = QCx * a1b0[2] + WQx * a1b0[5] + 0.5 * 1 * invZeta * a0b0[1];
 } // function (hgp_vrr_1_1_)
 
 } // namespace (nhfInt)

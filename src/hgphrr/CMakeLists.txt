@@ -14,6 +14,6 @@ add_executable(
 )
 
 target_link_libraries(
-    hgphrr_code_gen PRIVATE
+    hgphrr_code_gen PUBLIC
     hgplib
 )

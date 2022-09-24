@@ -50,12 +50,9 @@ void hgp_vrr_2_0_(
     a1b0[5] = PAx * a0b0[1] + WPx * a0b0[2];
     a2b0[0] = PAz * a1b0[0] + WPz * a1b0[3] + 0.5 * 1 * invZetaAB * (a0b0[0] - zetaCD * invZeta * a0b0[1]);
     a2b0[1] = PAy * a1b0[0] + WPy * a1b0[3];
-    a2b0[1] = PAz * a1b0[1] + WPz * a1b0[4];
     a2b0[2] = PAy * a1b0[1] + WPy * a1b0[4] + 0.5 * 1 * invZetaAB * (a0b0[0] - zetaCD * invZeta * a0b0[1]);
     a2b0[3] = PAx * a1b0[0] + WPx * a1b0[3];
-    a2b0[3] = PAz * a1b0[2] + WPz * a1b0[5];
     a2b0[4] = PAx * a1b0[1] + WPx * a1b0[4];
-    a2b0[4] = PAy * a1b0[2] + WPy * a1b0[5];
     a2b0[5] = PAx * a1b0[2] + WPx * a1b0[5] + 0.5 * 1 * invZetaAB * (a0b0[0] - zetaCD * invZeta * a0b0[1]);
 } // function (hgp_vrr_2_0_)
 
